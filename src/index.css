@@ -1,0 +1,78 @@
+/* Diretivas do Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis CSS para o tema escuro */
+:root {
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #18181b;
+  --color-bg-tertiary: #27272a;
+  --color-border: #3f3f46;
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-accent: #6366f1;
+}
+
+/* Estilos base */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #18181b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+}
+
+/* Utilitários customizados */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animação de fade in suave */
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
